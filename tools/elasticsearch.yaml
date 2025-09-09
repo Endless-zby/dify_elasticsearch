@@ -1,0 +1,75 @@
+identity:
+  name: "elasticsearch"
+  author: "byzhao"
+  label:
+    en_US: "elasticsearch"
+    zh_Hans: "elasticsearch"
+description:
+  human:
+    en_US: "日志收集插件"
+    zh_Hans: "日志收集插件"
+  llm: "日志收集插件"
+parameters:
+  - name: SERVER
+    type: string
+    required: true
+    label:
+      en_US: server
+      zh_Hans: 服务器
+    human_description:
+      en_US: "server"
+      zh_Hans: "es所在服务"
+    form: llm
+  - name: INDEX
+    type: string
+    required: true
+    label:
+      en_US: index
+      zh_Hans: 索引
+    human_description:
+      en_US: "index"
+      zh_Hans: "索引"
+    form: llm
+  - name: CONVERSATION_ID
+    type: string
+    required: false
+    label:
+      en_US: conversation_id
+      zh_Hans: 会话id
+    human_description:
+      en_US: "conversation_id"
+      zh_Hans: "会话id"
+    form: llm
+  - name: QUESTIONS
+    type: string
+    required: true
+    label:
+      en_US: questions
+      zh_Hans: 问题
+    human_description:
+      en_US: "questions"
+      zh_Hans: "输入的问题"
+    form: llm
+  - name: ANSWER
+    type: string
+    required: true
+    label:
+      en_US: answer
+      zh_Hans: 回答
+    human_description:
+      en_US: "answer"
+      zh_Hans: "ai的回答"
+    form: llm
+  - name: DATA
+    type: string
+    required: false
+    label:
+      en_US: data
+      zh_Hans: 附加参数
+    human_description:
+      en_US: "data"
+      zh_Hans: "附加参数（json格式）"
+    form: llm
+extra:
+  python:
+    source: tools/elasticsearch.py
