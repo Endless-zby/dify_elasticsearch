@@ -1,5 +1,7 @@
 from collections.abc import Generator
 from typing import Any
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -35,6 +37,8 @@ class ElasticsearchTool(Tool):
         qa_object = {
             "query": es_questions,
             "@timestamp": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+            "timestamp": int(time.time() * 1000),
+            "dateTime": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
         }
 
         start_tag = "<business>"
