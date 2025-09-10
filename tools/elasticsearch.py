@@ -38,7 +38,7 @@ class ElasticsearchTool(Tool):
             "query": es_questions,
             "@timestamp": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
             "timestamp": int(time.time() * 1000),
-            "dateTime": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
+            "@dateTime": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
         }
 
         start_tag = "<business>"
